@@ -14,6 +14,10 @@ Once this is complete:
  - `git clone gitserver:/repos/repo-name  [local-path]` clones a remote repository
  - `ssh gitserver` will ssh into the remote repo storage so that the remotes can be managed directly
  
+## Note of warning for those doing 42 Hercules Apples of Hesperides in the future
+
+The eval page expects an implementation in which you have pushed your public key. This surprised my evaluators as well.
+ 
 ## Credits
 
 All code is written by me.
