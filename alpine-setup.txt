@@ -1,0 +1,27 @@
+These are instructions for configuring the VM that will work with this exercise
+
+A simple cheat sheet for setting up a server.
+https://gist.github.com/patrickodacre/ae40f0dcf794f05baaf7959e872a4fd1
+
+Learning How to Git: Using SSH instead of HTTPS
+https://medium.com/@haydar_ai/learning-how-to-git-using-ssh-instead-of-https-91f09cff72de
+
+=========================================================
+1. Create the VM in VirtualBox. Settings linux.
+=========================================================
+2. Install Alpine Linux - Virtual
+Inside the VM, run:
+	setup-alpine
+		>> give it the hostname 'gitserver'
+		>> use the disk 'sda' as 'sys'
+		>> use 'busybox'
+		>> All other settings are default
+=========================================================
+2. Configure the Server
+Inside the VM, run:
+	apk add git
+	adduser git
+	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+	rc-service sshd restart
+	ln -s /home/git /repos
+=========================================================
