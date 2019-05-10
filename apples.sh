@@ -1,3 +1,4 @@
+#!/bin/sh
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -6,7 +7,7 @@
 #    By: gfielder <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/09 22:34:33 by gfielder          #+#    #+#              #
-#    Updated: 2019/05/10 01:43:50 by gfielder         ###   ########.fr        #
+#    Updated: 2019/05/10 11:42:03 by gfielder         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +20,8 @@ APPLES_ROOT=$(pwd)
 
 if [ $# -ne 1 ]
 then
-	echo "usage: sh $0 <host_port>"
+	echo "usage: ./apples.sh <host_port>"
+	exit -1
 fi
 HOST_PORT="$1"
 
@@ -91,6 +93,8 @@ echo "to clone a gitserver repo, run:"
 echo $GRN"    git clone gitserver:/repos/repo-name  [local-path]"$RST
 echo "For remote administration, run:"
 echo $GRN"    ssh gitserver"$RST
+echo $RED"If the gitserver command does not work, run:"$RST
+echo $GRN"    source gitserver-commands.sh"$RST
 
 echo ""
 echo $YEL"Would you like to open a repo for this project on the VM? y/n"$RST
